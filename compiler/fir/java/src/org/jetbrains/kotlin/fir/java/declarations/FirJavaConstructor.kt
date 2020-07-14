@@ -134,6 +134,8 @@ class FirJavaConstructor @FirImplementationDetail constructor(
     }
 
     override fun replaceReceiverTypeRef(newReceiverTypeRef: FirTypeRef?) {}
+
+    override fun replaceControlFlowGraphReference(newControlFlowGraphReference: FirControlFlowGraphReference) {}
 }
 
 @FirBuilderDsl
