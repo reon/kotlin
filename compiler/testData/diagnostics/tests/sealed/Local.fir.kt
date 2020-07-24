@@ -4,10 +4,10 @@ sealed class Sealed {
         object Second: NonFirst()
         object Third: NonFirst()
         fun foo(): Int {
-            val s = object: Sealed() {}
-            class Local: Sealed() {}
+            val s = object: <!SEALED_SUPERTYPE_IN_LOCAL_CLASS!>Sealed<!>() {}
+            class Local: <!SEALED_SUPERTYPE_IN_LOCAL_CLASS!>Sealed<!>() {}
             return s.hashCode()
         }
     }
-    val p: Sealed = object: Sealed() {}
+    val p: Sealed = object: <!SEALED_SUPERTYPE_IN_LOCAL_CLASS!>Sealed<!>() {}
 }
